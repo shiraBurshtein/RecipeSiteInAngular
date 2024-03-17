@@ -2,9 +2,9 @@ import {
   __commonJS
 } from "./chunk-WKYGNSYM.js";
 
-// ../node_modules/sweetalert2/dist/sweetalert2.all.js
+// node_modules/sweetalert2/dist/sweetalert2.all.js
 var require_sweetalert2_all = __commonJS({
-  "../node_modules/sweetalert2/dist/sweetalert2.all.js"(exports, module) {
+  "node_modules/sweetalert2/dist/sweetalert2.all.js"(exports, module) {
     (function(global, factory) {
       typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, global.Sweetalert2 = factory());
     })(exports, function() {

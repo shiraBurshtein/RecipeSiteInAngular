@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl:'./edit-recipe.component.html',
   styleUrl: './edit-recipe.component.css'
 })
+
 export class EditRecipeComponent implements OnInit{
 
   constructor (
@@ -28,6 +29,7 @@ export class EditRecipeComponent implements OnInit{
   public CategoryList: Category[] = [];
   
   ngOnInit(): void {
+
     this._categoryService.getAllCategories().subscribe({
       next: (res) => {
         this.CategoryList = res;
@@ -36,6 +38,7 @@ export class EditRecipeComponent implements OnInit{
         console.log(err);
       }
     });
+
     this._route.params.subscribe(params => {
       this.recipeCode = +params['recipeCode']; // Convert to number
     });
@@ -51,7 +54,9 @@ export class EditRecipeComponent implements OnInit{
     });
     
     this._recipeService.getRecipeById(this.recipeCode).subscribe(recipe => {
+
       this.recipe = recipe;
+
       this.addRecipeForm.controls["recipeName"].setValue(this.recipe.recipeName);
       this.addRecipeForm.controls["categoryCode"].setValue(this.recipe.categoryCode);
       this.addRecipeForm.controls["preparationTimeMinutes"].setValue(this.recipe.preparationTimeMinutes);
@@ -67,7 +72,7 @@ export class EditRecipeComponent implements OnInit{
    
   }
 
-  saveRecipe(): void {
+  saveRecipe(): void {   
     this.recipe.recipeName = this.addRecipeForm.value.recipeName;
     this.recipe.categoryCode = this.addRecipeForm.value.categoryCode;
     this.recipe.preparationTimeMinutes = this.addRecipeForm.value.preparationTimeMinutes;
@@ -76,7 +81,6 @@ export class EditRecipeComponent implements OnInit{
     this.recipe.instructions = this.addRecipeForm.value.instructions;
     this.recipe.image = this.addRecipeForm.value.image;
 
-    
     this._recipeService.updateReceipe(this.recipe,this.recipe.recipeCode).subscribe({
       next: (res) => {
         Swal.fire({

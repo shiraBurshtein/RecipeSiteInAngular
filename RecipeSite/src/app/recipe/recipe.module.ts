@@ -13,6 +13,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormBuilder, FormGroup, FormArray} from '@angular/forms';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 import { CategoryModule } from '../category/category.module';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 
 @NgModule({
@@ -26,7 +29,7 @@ import { CategoryModule } from '../category/category.module';
     MatInputModule,
     MatSelectModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,MatSliderModule,MatSidenavModule
    
   ]
 })

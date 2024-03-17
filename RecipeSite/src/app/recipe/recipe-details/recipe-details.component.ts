@@ -31,9 +31,15 @@ export class RecipeDetailsComponent implements OnInit {
   }
 
   deleteRecipe() {
-    if(this.isOwner())
-    this._RecipeService.deleteReceipe(this.recipeCode).subscribe();
-  
+    if(this.isOwner()){       
+    Swal.fire({
+      icon: 'error',
+      title: 'Error!',
+      text: 'the recipe was deleted Successfully.'
+    });
+     this._RecipeService.deleteReceipe(this.recipeCode).subscribe();
+     this.router.navigate(['/recipes']);
+    }
   }
 
   // Custom method to generate an array of a specific length for stars

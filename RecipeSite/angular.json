@@ -64,11 +64,11 @@
           "configurations": {
             "production": {
               "buildTarget": "RecipeSite:build:production",
-              "proxyConfig": "D:/שירה/תכנות/אנגולר/final final project/RecipeSite/src/app/proxy.conf.json"
+              "proxyConfig": "D:/שירה/תכנות/אנגולר/RecipeSiteInAngular/RecipeSite/src/app/proxy.conf.json"
             },
             "development": {
               "buildTarget": "RecipeSite:build:development",
-              "proxyConfig": "D:/שירה/תכנות/אנגולר/final final project/RecipeSite/src/app/proxy.conf.json"
+              "proxyConfig": "D:/שירה/תכנות/אנגולר/RecipeSiteInAngular/RecipeSite/src/app/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
